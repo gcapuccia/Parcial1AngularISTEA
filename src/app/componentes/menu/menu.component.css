@@ -1,0 +1,17 @@
+a{
+    color: aliceblue;
+}
+
+.logeo{
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+}
+
+table{
+    text-align: center;
+}
+
+th{
+    text-align: center;
+}

@@ -1,0 +1,86 @@
+
+<div class="row align-items-start">
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light col" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <span class="fs-4">Menu Lateral</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li>
+        <a class="nav-link link-dark" href="#" (click)="MostrarT()">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link link-dark">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+          reports
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link link-dark">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+          Files Manager
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link link-dark">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+          Tools
+        </a>
+      </li>
+    </ul>
+    <hr>
+  </div>
+
+
+
+        <div class="col">
+            <div class="alert alert-light" role="alert" >
+                   Home / Dashboard
+              </div>
+            <table class="table" *ngIf="MostrarTabla">
+                <tr>
+                    <th>
+                        <button *ngFor="let con of allmoneda"  (click)="filtroporcountry(con.country)">{{con.country}}</button>
+                </th>
+                </tr>
+                <div *ngIf="Mostrarcompleta">
+                <tr>
+                    <th scope="col">Country</th>
+                    <th scope="col">Client</th>
+                    <th scope="col">Balance</th>
+                    <th scope="col">Moneda</th>
+                </tr>
+                <tr *ngFor="let mon of allmoneda" >
+                    <td>{{ mon.country }}</td>
+                    <td>{{ mon.client }}</td>
+                    <td>{{ mon.Balance }}</td>
+                    <td>{{ mon.moneda }}</td>
+                </tr>
+                </div>
+                <div *ngIf="!Mostrarcompleta">
+                <tr *ngFor="let mon of filtromoneda">
+                    <th scope="col">Country</th>
+                    <th scope="col">Client</th>
+                    <th scope="col">Balance</th>
+                    <th scope="col">Moneda</th>
+                </tr>
+                
+                <tr *ngFor="let mon of filtromoneda">
+                    <td>{{ mon.country }}</td>
+                    <td>{{ mon.client }}</td>
+                    <td>{{ mon.Balance }}</td>
+                    <td>{{ mon.moneda }}</td>
+                </tr>
+            </div>
+            </table>
+        </div>
+        <div class="col">
+            <div class="logeo">
+                <a href="/"><button class="btn btn-primary">{{usuario}}</button></a>
+            </div>
+        </div>
+    </div>
+

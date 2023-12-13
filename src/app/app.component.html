@@ -1,0 +1,8 @@
+
+<app-login *ngIf="this.LoginService.LogingOK == ''"></app-login>
+
+<app-errorlogin *ngIf="this.LoginService.LogingOK == 'ERRORLOG'"></app-errorlogin>
+
+<app-menu *ngIf="this.LoginService.LogingOK == 'lista'"></app-menu>
+
+<router-outlet></router-outlet>
